@@ -1,22 +1,26 @@
 pipeline {
     agent any 
+    tools {
+        maven 'M3'
+    }
     stages {
         stage('Compile') { 
             steps {
                 // 
-                echo "étape compile"
+                echo "Etape compile"
+                bat 'mvn clean compile'
             }
         }
         stage('Test') { 
             steps {
                 // 
-                echo "étape test"
+                echo "etape test"
             }
         }
         stage('Package') { 
             steps {
                 // 
-                echo "étape package"
+                echo "etape package"
             }
         }
         stage('Deploy') { 
